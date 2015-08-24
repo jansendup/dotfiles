@@ -5,6 +5,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 filetype plugin indent on

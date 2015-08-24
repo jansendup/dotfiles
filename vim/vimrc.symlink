@@ -4,3 +4,6 @@ source ~/.vim/plugins.vim
 " Load project rc file
 set exrc
 set secure
+
+set relativenumber
+set number
