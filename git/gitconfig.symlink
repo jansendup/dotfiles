@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Jansen du Plessis
+#	email = jansen@localhost.localdomain
+[user]
+	email = jansendup@gmail.com
+[push]
+	default = simple
+[core]
+	editor = nano
