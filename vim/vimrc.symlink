@@ -13,3 +13,7 @@ let g:ycm_confirm_extra_conf = 0
 
 " Airline
 set laststatus=2
+
+map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+
