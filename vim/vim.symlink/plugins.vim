@@ -8,5 +8,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'lervag/vimtex', { 'for': 'tex' }
+
 call plug#end()
 filetype plugin indent on
