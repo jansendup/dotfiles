@@ -13,14 +13,27 @@ set softtabstop=3
 set shiftwidth=3
 set expandtab 
 
+syntax enable
+set background=light
+colorscheme solarized
+set foldmethod=marker
+let g:solarized_termcolors=256
+
 " YCM
 let g:ycm_confirm_extra_conf = 0
 
 " Airline
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'solarized'
 
-map <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+nmap <C-K> :%pyf /usr/share/clang/clang-format.py<cr>
+vmap <C-K> :pyf /usr/share/clang/clang-format.py<cr>
 imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 let g:tex_flavor='latex'
 let g:ycm_semantic_triggers = {}

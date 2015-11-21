@@ -4,11 +4,17 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
+Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
+Plug 'bling/vim-bufferline'
+Plug 'edkolev/tmuxline.vim'
+
+Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'nikvdp/ejs-syntax'
 
 Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'html', 'css', 'ejs'] }
 
 call plug#end()
 filetype plugin indent on
