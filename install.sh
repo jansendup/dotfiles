@@ -9,7 +9,7 @@ done
 DOTFILES="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 echo "creating symlinks"
-linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
+linkables=$( find -H "$DOTFILES" -not -path "$DOTFILES/.git/*" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
   target="$HOME/.$( basename $file ".symlink" )"
   [ -e $target ] && cp -r $target "$target.bak" && rm -rf $target

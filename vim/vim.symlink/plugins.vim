@@ -11,6 +11,7 @@ Plug 'edkolev/tmuxline.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/syntastic'
 Plug 'nikvdp/ejs-syntax'
 
 Plug 'lervag/vimtex', { 'for': 'tex' }
