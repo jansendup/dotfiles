@@ -14,10 +14,11 @@ set shiftwidth=3
 set expandtab 
 
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 set foldmethod=marker
-let g:solarized_termcolors=256
+set t_Co=16
+let g:solarized_termcolors=16
 
 " YCM
 let g:ycm_confirm_extra_conf = 0
@@ -26,6 +27,18 @@ let g:ycm_confirm_extra_conf = 0
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 
 nmap <C-K> :%pyf /usr/share/clang/clang-format.py<cr>
 vmap <C-K> :pyf /usr/share/clang/clang-format.py<cr>

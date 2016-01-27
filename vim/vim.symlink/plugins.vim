@@ -12,8 +12,9 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/syntastic'
-Plug 'nikvdp/ejs-syntax'
 
+Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
+Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'html', 'css', 'ejs'] }
 
