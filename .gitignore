@@ -1,2 +1,4 @@
 .netrwhist
 vim/vim.symlink/plugged/
+vim/vim.symlink/ftplugin/
+vim/vim.symlink/spell/
