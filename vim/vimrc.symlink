@@ -8,9 +8,9 @@ set secure
 set relativenumber
 set number
 
-set tabstop=3
-set softtabstop=3
-set shiftwidth=3
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab 
 
 syntax enable
@@ -22,6 +22,14 @@ let g:solarized_termcolors=16
 
 " YCM
 let g:ycm_confirm_extra_conf = 0
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Airline
 set laststatus=2
@@ -39,14 +47,31 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
+" clang_format
+" nmap <C-K> :%pyf /usr/share/clang/clang-format.py<cr>
+" vmap <C-K> :pyf /usr/share/clang/clang-format.py<cr>
+" imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+let g:clang_format#style_options = {"Standard" : "C++11"}
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
+let g:clang_format#autoformat_on_insert_leave = 1
 
-nmap <C-K> :%pyf /usr/share/clang/clang-format.py<cr>
-vmap <C-K> :pyf /usr/share/clang/clang-format.py<cr>
-imap <C-K> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
+autocmd FileType c,cpp,objc nnoremap <buffer> <c-f> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer> <c-f> :ClangFormat<CR>
 
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+" jsbeautify
+autocmd FileType javascript nnoremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json nnoremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx nnoremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType html nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css nnoremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType ejs nnoremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+autocmd FileType ejs vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 
 let g:tex_flavor='latex'
 let g:ycm_semantic_triggers = {}
