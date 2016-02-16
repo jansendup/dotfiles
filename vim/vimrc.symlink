@@ -1,6 +1,6 @@
 " load plugins
 source ~/.vim/plugins.vim
-let g:plug_timeout = 2400
+let g:plug_timeout = 300
 
 " Load project rc file
 set exrc
