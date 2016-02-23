@@ -8,8 +8,8 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DOTFILES="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-echo "creating symlinks"
-linkables=$( find -maxdepth 3 -H "$DOTFILES" -not -path "$DOTFILES/.git/*" -name '*.symlink' )
+echo "creating symlinks $DOTFILES"
+linkables=$( find -H "$DOTFILES" -maxdepth 3 -not -path "$DOTFILES/.git/*" -name "*.symlink" )
 for file in $linkables ; do
   target="$HOME/.$( basename $file ".symlink" )"
   [ -e $target ] && cp -r $target "$target.bak" && rm -rf $target
