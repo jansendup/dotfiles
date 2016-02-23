@@ -10,6 +10,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 Plug 'edkolev/tmuxline.vim'
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer' }
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
